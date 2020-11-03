@@ -1,0 +1,13 @@
+name: 'Local cache'
+description: 'Copies a folder if it exists from '
+inputs:
+  folder-to-cache:
+    description: 'Folder in build directory to attempt caching'
+    required: true
+  cache-target-folder:
+    description: 'Folder where cached folder should be copied to after build'
+    required: true
+runs:
+  using: 'node12'
+  main: 'index.js'
+  post: 'cleanup.js'
