@@ -13,7 +13,7 @@ async function action() {
     core.info(`Restored cache from ${cacheTargetFolder} to ${folderToCache}`)
 }
 
-return action.then(() => {
+return action().then(() => {
     console.log('finished with local-cache-action')
 })
 

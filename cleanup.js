@@ -12,7 +12,7 @@ async function cleanup() {
     core.info(`Cached build folder from ${cacheTargetFolder} to ${folderToCache}`)
 }
 
-return cleanup.then(() => {
+return cleanup().then(() => {
     console.log('finished with local-cache-action cleanup')
 })
 
