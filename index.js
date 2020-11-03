@@ -22,7 +22,7 @@ async function action() {
 return action().then(() => {
     core.debug('finished with local-cache-action')
 }).catch((err) => {
-    core.error(`error while executing local-cache-action ${err}`)
+    core.setFailed(`Error while executing local-cache-action cleanup ${err}`);
 })
 
 

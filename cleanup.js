@@ -14,7 +14,10 @@ async function cleanup() {
 
 return cleanup().then(() => {
     console.log('finished with local-cache-action cleanup')
+}).catch((err) => {
+    core.setFailed(`Error while executing local-cache-action cleanup ${err}`);
 })
+
 
 
 
