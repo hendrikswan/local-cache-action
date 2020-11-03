@@ -3,7 +3,6 @@ const io = require('@actions/io');
 const fs = require('fs').promises
 
 async function action() {
-
     const folderToCache = core.getInput('folder-to-cache', { required: true });
     const cacheTargetFolder = core.getInput('storage-folder', { required: true })
 
@@ -23,7 +22,7 @@ async function action() {
 return action().then(() => {
     core.debug('finished with local-cache-action')
 }).catch((err) => {
-    core.error('error while executing local-cache-action ', err)
+    core.error(`error while executing local-cache-action ${err}`)
 })
 
 
