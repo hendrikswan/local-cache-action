@@ -1,6 +1,6 @@
 const core = require('@actions/core');
 const io = require('@actions/io');
-const fs = require('fs').promises
+const fs = require('fs')
 
 async function action() {
     const folderToCache = core.getInput('folder-to-cache', { required: true });
@@ -8,7 +8,7 @@ async function action() {
 
     core.info(`Attempting to restore cache from ${cacheTargetFolder} to ${folderToCache}`)
 
-    const cachedFolderExists = await fs.exists(cacheTargetFolder)
+    const cachedFolderExists = await fs.existsSync(cacheTargetFolder)
     if (!cachedFolderExists) {
         core.info('The cache folder does not exist at path ', cacheTargetFolder)
         return
@@ -22,7 +22,6 @@ async function action() {
 return action().then(() => {
     core.debug('finished with local-cache-action')
 }).catch((err) => {
-    core.info(`fs ${fs}`)
     core.error(`error while executing local-cache-action ${err}`)
 })
 
