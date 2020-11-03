@@ -22,6 +22,7 @@ async function action() {
 return action().then(() => {
     core.debug('finished with local-cache-action')
 }).catch((err) => {
+    core.info(`fs ${fs}`)
     core.error(`error while executing local-cache-action ${err}`)
 })
 
