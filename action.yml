@@ -4,7 +4,7 @@ inputs:
   folder-to-cache:
     description: 'Folder in build directory to attempt caching'
     required: true
-  cache-target-folder:
+  storage-folder:
     description: 'Folder where cached folder should be copied to after build'
     required: true
 runs:
